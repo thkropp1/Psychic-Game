@@ -13,9 +13,6 @@
     document.onkeyup = function(event) {
 
       var userInput = event.key;
-      guessesList.push(userInput); // add to list of guesses so far
-      console.log("User input is: " + userInput);
-      console.log("Guesses so far: " + guessesList.join(" "));
 
       var rand = getRandomLetter(); // Get a random letter from the alphabet a to z
       console.log("Random letter is: " + rand);
@@ -47,6 +44,11 @@ function checkGuess(userInput, rand) { <!-- Check user input for a match -->
         alert("Wrong input. Please try again.");
         console.log("Wrong input. Please try again.");
       } else {
+
+          guessesList.push(userInput); // add to list of guesses so far
+          console.log("User input is: " + userInput);
+          console.log("Guesses so far: " + guessesList.join(" "));
+          
           if (userInput === rand) { /* if it's a correct guess */
                 winCount++; // Add one to Wins
                 console.log("Wins: " + winCount);
